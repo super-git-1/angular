@@ -6,6 +6,10 @@ import { MainComponent } from './main/main.component';
 import { ProductsComponent } from './products/products.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { LogUnComponent } from './log-un/log-un.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,10 +18,16 @@ import { FooterComponent } from './footer/footer.component';
     ProductsComponent,
     HeaderComponent,
     FooterComponent,
+    LogInComponent,
+    LogUnComponent,
+    UserListComponent,
   ],
   imports: [
-    BrowserModule
-  ], 
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
