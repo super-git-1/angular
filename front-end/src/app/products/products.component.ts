@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { product } from '../modele/IProduct';
 
 @Component({
@@ -8,8 +8,10 @@ import { product } from '../modele/IProduct';
 
 })
 export class ProductsComponent  {
-
+  @Input()productItem!: product;
   lest:product[]=[];
+  cartItemList: any;
+  productList: any;
   constructor() {
     let p1:product = {"id":0 , "name":"Head Phone","quantity":10 , "price":25 , "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MX472_AV4?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1570119352353"}
     let p2:product ={"id":1 , "name":"lg phones","quantity":5 , "price":50 , "img":"https://www.lg.com/us/images/cell-phones/md07517294/gallery/mobile-03.jpg"}
@@ -21,5 +23,13 @@ export class ProductsComponent  {
     this.lest.push(p3);
     this.lest.push(p4);
   }
-
+  addtoCart(product : any){
+    this.cartItemList.push(product);
+    this.productList.next(this.cartItemList);
+    this.getTotalPrice();
+    console.log(this.cartItemList)
+  }
+  getTotalPrice() {
+    throw new Error('Method not implemented.');
+  }
 }

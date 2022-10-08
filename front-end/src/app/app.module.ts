@@ -10,6 +10,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { LogUnComponent } from './log-un/log-un.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './servese/cart.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LogInComponent,
     LogUnComponent,
     UserListComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
